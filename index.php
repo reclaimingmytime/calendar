@@ -16,13 +16,13 @@ $firstWeek = '01';
 $lastWeek = '53';
 
 if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
-  $customWeek = true;
-  $currentWeek = $week;
-
   $trimmedWeek = ltrim($_GET['w'], 0); //removes all leading 0s
   $paddedWeek = str_pad($trimmedWeek, 2, '0', STR_PAD_LEFT); //adds a leading 0 to single-digit numbers
 
   if(isValidWeek($paddedWeek)) {
+    $customWeek = true;
+    $currentWeek = $week;
+    
     $week = htmlspecialchars($paddedWeek, ENT_QUOTES);
   }
 }
