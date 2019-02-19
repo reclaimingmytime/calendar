@@ -2,7 +2,7 @@
 require_once("config.php");
 
 function isBetween($x, $min, $max) {
-  return (!is_numeric($x) || ($min > $x) || ($x > $max)) ? false : true;
+  return is_numeric($x) && ($min <= $x) && ($x <= $max);
 }
 
 function escape($input) {
