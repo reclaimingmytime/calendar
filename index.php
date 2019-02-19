@@ -5,10 +5,6 @@ function isBetween($x, $min, $max) {
   return (!is_numeric($x) || ($min > $x) || ($x > $max)) ? false : true;
 }
 
-function isValidWeek($x) {
-  return preg_match('/^(5[0-3]|[1-4][0-9]|0[1-9])$/', $x);
-}
-
 $date = new DateTime();
 $week = $date->format("W");
 
@@ -16,15 +12,13 @@ $firstWeek = '01';
 $lastWeek = '53';
 
 if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
+  $customWeek = true;
+  $currentWeek = $week;
+
   $trimmedWeek = ltrim($_GET['w'], 0); //removes all leading 0s
   $paddedWeek = str_pad($trimmedWeek, 2, '0', STR_PAD_LEFT); //adds a leading 0 to single-digit numbers
 
-  if(isValidWeek($paddedWeek)) {
-    $customWeek = true;
-    $currentWeek = $week;
-    
-    $week = htmlspecialchars($paddedWeek, ENT_QUOTES);
-  }
+  $week = htmlspecialchars($paddedWeek, ENT_QUOTES);
 }
 ?>
 <!DOCTYPE html>
