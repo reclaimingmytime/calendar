@@ -67,6 +67,6 @@ if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
      <?php } ?>
     </p>
 
-    <iframe src="<?php echo $baseURL . $week . $suffixURL; ?>" width="100%" height="730px"></iframe>
+    <iframe src="<?php echo $baseURL . $week . $suffixURL; ?>" referrerpolicy="no-referrer" width="100%" height="730px"></iframe>
   </body>
 </html>
