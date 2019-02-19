@@ -9,7 +9,7 @@ function isValidWeek($x) {
   return preg_match('/^(5[0-3]|[1-4][0-9]|0[1-9])$/', $x);
 }
 
-$date = new DateTime('now');
+$date = new DateTime();
 $week = $date->format("W");
 
 $firstWeek = '01';
