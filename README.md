@@ -13,6 +13,6 @@ In the desired directory, type the following: `git clone https://github.com/recl
 2. Open `config.php` and change the required variables. `$baseURL` is the part *before* the week number. Logically, `$suffixURL` is the part after that number.
 
 ## Command-line updates
-As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository using `git pull` in that directory.
+As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository using `git pull origin master` in that directory.
 
 Note that your configuration file `config.php` will be **kept** in any case, as that file is ignored by git.
