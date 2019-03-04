@@ -7,6 +7,7 @@ The script has been kept extremely simple by design.
 As an alternative to downloading the files manually from GitHub, you can use the command-line.
 
 In the desired directory, type the following: `git clone https://github.com/reclaimingmytime/calendar.git`
+Note: This will create a new directory called `calendar`.
 
 ## Configuration
 1. Copy `config.default.php` to `config.php`.
