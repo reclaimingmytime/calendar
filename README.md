@@ -9,7 +9,7 @@ More specifically, the script creates an iframe in the following format:
 
 `[$baseURL][WEEKNO][$suffixURL]`, e.g. `https://www.example.com/01/calendar.htm`
 
-By the default, the script points to the *current* calendar week. The user can navigate to the next or previous week, or go back to the current week. The script displays the embedded week.
+By the default, the script points to the *current* calendar week. The user can navigate to the next or previous week, or go back to the current week.
 
 ### Input validation
 The script trusts that the variables in the configuration file are defined and valid. Configuration files are *not* considered "user input".
