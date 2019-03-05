@@ -21,12 +21,12 @@ There are checks on the week number:
 2. The calendar week gets formatted to two digits, so `1` becomes `01` and `0010` becomes `10`.
 
 ### Limitations
-The script comes with all limitations limitations of an iframe, including not being able to auto-login and having a fixed size - i.e. not being "responsive".
+The script only works for the current year. It also comes with all limitations of an iframe, including not being able to auto-login and having a fixed size - i.e. not being "responsive".
 
 ## Command-line installation
 As an alternative to downloading the files manually from GitHub, you can use the command-line.
 
-In the desired directory, type the following: `git clone https://github.com/reclaimingmytime/calendar.git`
+In the desired directory, type or paste the following: `git clone https://github.com/reclaimingmytime/calendar.git`
 
 Note: This will create a new directory called `calendar`.
 
@@ -39,6 +39,6 @@ Note: This will create a new directory called `calendar`.
 As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository by typing the following in that directory.
 
 `git fetch --all
- git reset --hard origin/master`
+git reset --hard origin/master`
 
 Note that your configuration file `config.php` will be **kept** in any case, as that file is ignored by git.
