@@ -2,7 +2,7 @@
 require_once("config.php");
 
 function isBetween($x, $min, $max) {
-  return is_numeric($x) && ($min <= $x) && ($x <= $max);
+  return is_int($x) && ($min <= $x) && ($x <= $max);
 }
 
 function escape($input) {
@@ -21,11 +21,11 @@ $week = $date->format("W");
 $firstWeek = '01';
 $lastWeek = '53';
 
-if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
+if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
   $customWeek = true;
   $currentWeek = $week;
 
-  $week = formatWeek($_GET['w']);
+  $week = formatWeek((int)$_GET['w']);
 }
 ?>
 <!DOCTYPE html>
