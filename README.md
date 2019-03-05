@@ -33,7 +33,7 @@ Note: This will create a new directory called `calendar`.
 ## Configuration
 1. Copy `config.default.php` to `config.php`.
 2. Open `config.php` and change the required variables. `$baseURL` is the part *before* the week number. Logically, `$suffixURL` is the part after that number. Make sure that `$baseURL` is a *valid URL*, and that both variables *end with a slash*.
-3. Test the page. If it does not display properly, make sure you are logged in to the embedded page. You might want to view the source code - specifically, the `iframe src` attribute. That usually tells you how the script interpreted your input.
+3. Test the page. If it does not display properly, make sure you are logged in to the embedded site. You might want to view the source code - specifically, the `iframe src` attribute. That usually tells you how the script interpreted your input.
 
 ## Command-line updates
 As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository by typing the following in that directory.
