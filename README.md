@@ -17,7 +17,7 @@ The links "Previous Week", "Current Week" or "Next Week" are disabled dynamicall
 The script trusts that the variables in the configuration file are defined and valid. Configuration files are *not* considered "user input".
 
 There are checks on the week number:
-1. Only valid calendar weeks are accepted, that is an integer from 1 to 53.
+1. Only valid calendar weeks are accepted, that is a number from 1 to 53. Decimals get converted to integers, so `3.14` becomes `3`.
 2. The calendar week gets formatted to two digits, so `1` becomes `01` and `0010` becomes `10`.
 
 ### Limitations
