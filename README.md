@@ -1,11 +1,26 @@
 # calendar
-A basic PHP script that embeds a page based on the current week number.
+A basic PHP script that embeds a page based on the current calendar week.
+
+The script has been kept extremely simple by design.
+
+## Functionality
 
 More specifically, the script creates an iframe in the following format:
 
 `[$baseURL][WEEKNO][$suffixURL]`, e.g. `https://www.example.com/01/calendar.htm`
 
-The script has been kept extremely simple by design.
+By the default, the script points to the *current* calendar week. The user can navigate to the next or previous week, or go back to the current week. The script displays the embedded week.
+
+### Input validation
+The script trusts that the variables in the configuration file are defined and valid. Configuration files are *not* considered "user input".
+
+There are checks on the week number:
+1. Only valid calendar weeks are accepted, that is an integer from 1 to 53.
+2. The links "Previous Week", "Current Week" or "Next Week" are disabled dynamically. For example, if you are on week one, you cannot go back a week, so the link "Previous Week" is disabled.
+3. The calendar week gets formatted to two digits, so `1` becomes `01` and `0010` becomes `10`.
+
+### Limitations
+The script comes with all limitations limitations of an iframe, including not being able to auto-login and having a fixed size - i.e. not being "responsive".
 
 ## Command-line installation
 As an alternative to downloading the files manually from GitHub, you can use the command-line.
