@@ -11,13 +11,14 @@ More specifically, the script creates an iframe in the following format:
 
 By the default, the script points to the *current* calendar week. The user can navigate to the next or previous week, or go back to the current week.
 
+The links "Previous Week", "Current Week" or "Next Week" are disabled dynamically. For example, if you are on week one, you cannot go back a week, so the link "Previous Week" is disabled.
+
 ### Input validation
 The script trusts that the variables in the configuration file are defined and valid. Configuration files are *not* considered "user input".
 
 There are checks on the week number:
 1. Only valid calendar weeks are accepted, that is an integer from 1 to 53.
-2. The links "Previous Week", "Current Week" or "Next Week" are disabled dynamically. For example, if you are on week one, you cannot go back a week, so the link "Previous Week" is disabled.
-3. The calendar week gets formatted to two digits, so `1` becomes `01` and `0010` becomes `10`.
+2. The calendar week gets formatted to two digits, so `1` becomes `01` and `0010` becomes `10`.
 
 ### Limitations
 The script comes with all limitations limitations of an iframe, including not being able to auto-login and having a fixed size - i.e. not being "responsive".
