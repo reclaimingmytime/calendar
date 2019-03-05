@@ -4,8 +4,7 @@ A basic PHP script that embeds a page based on the current calendar week.
 The script has been kept extremely simple by design.
 
 ## Functionality
-
-More specifically, the script creates an iframe in the following format:
+More specifically, the script creates an iframe of the following URL:
 
 `[$baseURL][WEEKNO][$suffixURL]`, e.g. `https://www.example.com/01/calendar.htm`
 
@@ -13,7 +12,7 @@ By the default, the script points to the *current* calendar week. The user can n
 
 The links "Previous Week", "Current Week" or "Next Week" are disabled dynamically. For example, if you are on week one, you cannot go back a week, so the link "Previous Week" is disabled.
 
-### Input validation
+### Input Validation
 The script trusts that the variables in the configuration file are defined and valid. Configuration files are *not* considered "user input".
 
 There are checks on the week number:
@@ -23,7 +22,7 @@ There are checks on the week number:
 ### Limitations
 The script only works for the current year. It also comes with all limitations of an iframe, including not being able to auto-login and having a fixed size - i.e. not being "responsive".
 
-## Command-line installation
+## Installation
 As an alternative to downloading the files manually from GitHub, you can use the command-line.
 
 In the desired directory, type or paste the following: `git clone https://github.com/reclaimingmytime/calendar.git`
@@ -35,7 +34,7 @@ Note: This will create a new directory called `calendar`.
 2. Open `config.php` and change the required variables. `$baseURL` is the part *before* the week number. Logically, `$suffixURL` is the part after that number. Make sure that `$baseURL` is a *valid URL*.
 3. Test the page. If it does not display properly, make sure you are logged in to the embedded site. You might want to review the generated source code. Specifically, analyse the `iframe src` attribute and see if that URL displays properly without an iframe.
 
-## Command-line updates
+## Updating
 As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository using the following command in that directory:
 
 `git fetch --all && git reset --hard origin/master`
