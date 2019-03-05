@@ -1,6 +1,10 @@
 # calendar
 A basic PHP script that embeds a page based on the current week number.
 
+More specifically, the script creates an iframe of the following URL:
+
+`[$baseURL][WEEKNO][$suffixURL]`, e.g. `https://www.example.com/01/suffix.html`
+
 The script has been kept extremely simple by design.
 
 ## Command-line installation
