@@ -36,9 +36,8 @@ Note: This will create a new directory called `calendar`.
 3. Test the page. If it does not display properly, make sure you are logged in to the embedded site. You might want to view the source code - specifically, the `iframe src` attribute. That usually tells you how the script interpreted your input.
 
 ## Command-line updates
-As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository by typing the following in that directory.
+As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository using the following command in that directory:
 
-`git fetch --all
-git reset --hard origin/master`
+`git fetch --all && git reset --hard origin/master`
 
 Note that your configuration file `config.php` will be **kept** in any case, as that file is ignored by git.
