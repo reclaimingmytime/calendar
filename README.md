@@ -12,7 +12,7 @@ By the default, the script points to the *current* calendar week. The user can n
 
 The links "Previous Week", "Current Week" or "Next Week" are disabled dynamically. For example, if you are on week one, you cannot go back a week, so the link "Previous Week" is disabled.
 
-Optionally, the embed contains a link to the full calendar. This is especially useful if the calendar requires a one-time login per session or contains any extra functionality not covered by the embed script.
+Optionally, a link to the full calendar can be specified. This is especially useful if the calendar requires a one-time login per session or contains any extra functionality not covered by the embed script.
 
 ### Input Validation
 The script trusts that the variables in the configuration file are defined and valid. Configuration files are *not* considered "user input".
