@@ -43,6 +43,10 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
     .currentWeek {
       font-weight: bold;
     }
+    .fullCalendar {
+      font-style: italic;
+      color: #555;
+    }
     </style>
   </head>
   <body>
@@ -65,6 +69,10 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
         <a href="?w=<?php echo $week + 1; ?>">Next Week</a>
       <?php } else { ?>
        <span>Next Week</span>
+     <?php } ?>
+
+     <?php if(!empty($fullCalendar)) { ?>
+      | <a href="<?php echo $fullCalendar; ?>" class="fullCalendar" target="_blank">Full Calendar</a>
      <?php } ?>
     </p>
 

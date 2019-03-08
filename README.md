@@ -31,7 +31,7 @@ Note: This will create a new directory called `calendar`.
 
 ## Configuration
 1. Copy `config.default.php` to `config.php`.
-2. Open `config.php` and change the required variables. `$baseURL` is the part *before* the week number. Logically, `$suffixURL` is the part after that number. Make sure that `$baseURL` is a *valid URL*.
+2. Open `config.php` and change the required variables. `$baseURL` is the part *before* the week number, while `$suffixURL` is the part after that number. `$fullCalendar` is optional and points to the full calendar site. Make sure that `$baseURL` and `$fullURL` is a *valid URL*.
 3. Test the page. If it does not display properly, make sure you are logged in to the embedded site. You might want to review the generated source code. Specifically, analyse the `iframe src` attribute and see if that URL displays properly without an iframe.
 
 ## Updating
