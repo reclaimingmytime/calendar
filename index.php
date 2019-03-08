@@ -37,6 +37,9 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
     p {
       margin: 0;
     }
+    p span, p a {
+      margin-right: 15px;
+    }
     a {
       text-decoration: none;
     }
@@ -51,19 +54,19 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
   </head>
   <body>
     <p>
-      <span>Week <?php echo $week; ?>.</span> |
+      <span>Week <?php echo $week; ?>.</span>
 
       <?php if($week !== $firstWeek) { ?>
         <a href="?w=<?php echo $week - 1; ?>">Previous Week</a>
       <?php } else { ?>
         <span>Previous Week</span>
-      <?php } ?> |
+      <?php } ?>
 
       <?php if(isset($customWeek) && $week !== $currentWeek) { ?>
         <a class="currentWeek" href=".">Current Week</a>
       <?php } else { ?>
         <span>Current Week</span>
-      <?php } ?> |
+      <?php } ?>
 
       <?php if($week !== $lastWeek) { ?>
         <a href="?w=<?php echo $week + 1; ?>">Next Week</a>
@@ -72,7 +75,7 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
      <?php } ?>
 
      <?php if(!empty($fullCalendar)) { ?>
-      | <a href="<?php echo $fullCalendar; ?>" class="fullCalendar" target="_blank">Full Calendar</a>
+      <a href="<?php echo $fullCalendar; ?>" class="fullCalendar" target="_blank">Full Calendar</a>
      <?php } ?>
     </p>
 
