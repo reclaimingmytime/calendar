@@ -75,7 +75,7 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
      <?php } ?>
 
      <?php if(!empty($fullCalendar)) { ?>
-      <a href="<?php echo $fullCalendar; ?>" class="fullCalendar" target="_blank">Full Calendar</a>
+      <a href="<?php echo $fullCalendar; ?>" class="fullCalendar" target="_blank" rel="nofollow noopener noreferrer">Full Calendar</a>
      <?php } ?>
     </p>
 
