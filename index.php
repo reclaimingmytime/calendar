@@ -34,6 +34,9 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
     <meta charset="utf-8">
     <title>Calendar Week <?php echo $week; ?></title>
     <style>
+    body {
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
     p {
       margin: 0;
     }
@@ -41,6 +44,7 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
       margin-right: 15px;
     }
     a {
+      color: #0000cd;
       text-decoration: none;
     }
     .currentWeek {
