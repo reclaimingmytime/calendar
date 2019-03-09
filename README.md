@@ -39,6 +39,11 @@ Note: This will create a new directory called `calendar`.
 ## Updating
 As an alternative to downloading the new files manually, if you have installed the script through git, you can simply update your local repository using the following command in that directory:
 
-`git fetch --all && git reset --hard origin/master`
+`git pull origin master`
 
 Note that your configuration file `config.php` will be **kept** in any case, as that file is ignored by git.
+
+### Alternative
+Should the command above not update your local repository, you can try the following:
+
+`git fetch --all && git reset --hard origin/master`
