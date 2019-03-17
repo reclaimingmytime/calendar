@@ -36,56 +36,41 @@ if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
   <head>
     <meta charset="utf-8">
     <title>Calendar Week <?php echo $week; ?></title>
-    <style>
-    body {
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
-    }
-    p {
-      margin: 0;
-    }
-    p span, p a {
-      margin-right: 15px;
-    }
-    a {
-      color: #0000cd;
-      text-decoration: none;
-    }
-    .currentWeek {
-      font-weight: bold;
-    }
-    .fullCalendar {
-      font-style: italic;
-      color: #555;
-    }
-    </style>
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
+  
   <body>
-    <p>
-      <span>Week <?php echo $week; ?>.</span>
+    <header>
+      <h1>Week <?php echo $week; ?>.</h1>
+        <nav>
+          <ul>
+            <?php if($week !== $firstWeek) { ?>
+              <li><a href="?w=<?php echo $week - 1; ?>">Previous Week</a></li>
+            <?php } else { ?>
+              <li><span>Previous Week</span>
+            <?php } ?>
 
-      <?php if($week !== $firstWeek) { ?>
-        <a href="?w=<?php echo $week - 1; ?>">Previous Week</a>
-      <?php } else { ?>
-        <span>Previous Week</span>
-      <?php } ?>
+            <?php if(isset($customWeek) && $week !== $currentWeek) { ?>
+              <li><a class="currentWeek" href=".">Current Week</a>
+            <?php } else { ?>
+              <li><span>Current Week</span>
+            <?php } ?>
 
-      <?php if(isset($customWeek) && $week !== $currentWeek) { ?>
-        <a class="currentWeek" href=".">Current Week</a>
-      <?php } else { ?>
-        <span>Current Week</span>
-      <?php } ?>
+            <?php if($week !== $lastWeek) { ?>
+              <li><a href="?w=<?php echo $week + 1; ?>">Next Week</a>
+            <?php } else { ?>
+              <li><span>Next Week</span>
+            <?php } ?>
 
-      <?php if($week !== $lastWeek) { ?>
-        <a href="?w=<?php echo $week + 1; ?>">Next Week</a>
-      <?php } else { ?>
-       <span>Next Week</span>
-     <?php } ?>
+            <?php if(!empty($fullCalendar)) { ?>
+              <li><a href="<?php echo $fullCalendar; ?>" class="fullCalendar" target="_blank" rel="nofollow noopener noreferrer">Full Calendar</a></li>
+            <?php } ?>
+          </ul>
+        </nav>
+    </header>
 
-     <?php if(!empty($fullCalendar)) { ?>
-      <a href="<?php echo $fullCalendar; ?>" class="fullCalendar" target="_blank" rel="nofollow noopener noreferrer">Full Calendar</a>
-     <?php } ?>
-    </p>
-
-    <iframe src="<?php echo $baseURL . $week . $suffixURL; ?>" referrerpolicy="no-referrer" width="100%" height="730px"></iframe>
+    <main>
+      <iframe src="<?php echo $baseURL . $week . $suffixURL; ?>" referrerpolicy="no-referrer" width="100%" height="730px"></iframe>
+    </main>
   </body>
 </html>

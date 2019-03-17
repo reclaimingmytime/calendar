@@ -1,0 +1,45 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Elements */
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 8px;
+  background: #fff;
+  color: #000;
+}
+h1 {
+  font-size: inherit;
+  display: inline;
+  font-weight: normal;
+}
+
+/* Navigation */
+a {
+  color: #0000cd;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+ul, ul li {
+  display: inline;
+}
+nav {
+  display: inline;
+}
+nav li {
+  margin-left: 15px;
+}
+
+.fullCalendar {
+  font-style: italic;
+  color: #555;
+}
+.currentWeek {
+  font-weight: bold;
+}
