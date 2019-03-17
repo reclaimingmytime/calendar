@@ -21,14 +21,14 @@ function formatWeek($raw) {
 $date = new DateTime();
 $week = $date->format("W");
 
-$firstWeek = '01';
-$lastWeek = '53';
+$firstWeek = 01;
+$lastWeek = 53;
 
 if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
   $customWeek = true;
   $currentWeek = $week;
 
-  $week = formatWeek((int)$_GET['w']);
+  $week = (int)formatWeek($_GET['w']);
 }
 ?>
 <!DOCTYPE html>
