@@ -1,6 +1,6 @@
 <?php
 if(!file_exists("config.php")) {
-  die("config.php missing. You can use config.default.php as a template.");
+  die("config.php missing. You can use config.sample.php as a template.");
 }
 require_once("config.php");
 
