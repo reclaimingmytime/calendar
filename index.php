@@ -33,16 +33,28 @@ if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
 
   $week = formatWeek($_GET['w']);
 }
+
+$embedAvailable = !empty($baseURL) && !empty($suffixURL);
+if($embedAvailable === true) {
+  $title = "Calendar Week " . $week;
+} else {
+  $title = "Embed not available";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Calendar Week <?php echo $week; ?></title>
+    <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   
   <body>
+    <?php if($embedAvailable === false) { ?>
+      <main>
+        <em>Embed not available</em>
+      </main>
+    <?php } else { ?>
     <header>
       <h1>Week <?php echo $week; ?>.</h1>
         <nav>
@@ -75,5 +87,6 @@ if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
     <main>
       <iframe src="<?php echo $baseURL . $week . $suffixURL; ?>" referrerpolicy="no-referrer"></iframe>
     </main>
+    <?php } ?>
   </body>
 </html>
