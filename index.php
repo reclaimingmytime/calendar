@@ -18,8 +18,12 @@ function formatWeek($raw) {
   return escape($paddedWeek);
 }
 
-$date = new DateTime();
-$week = $date->format("W");
+function getCurrentWeek() {
+  $date = new DateTime();  
+  return $date->format("W");
+}
+
+$week = getCurrentWeek();
 
 $firstWeek = '01'; //int would convert 01 to 1
 $lastWeek = '53';
