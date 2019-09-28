@@ -48,7 +48,7 @@ if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
         <nav>
           <ul>
             <?php if($week !== $firstWeek) { ?>
-              <li><a href="?w=<?php echo $week - 1; ?>">Previous Week</a></li>
+              <li><a href="?w=<?php echo formatWeek($week - 1); ?>">Previous Week</a></li>
             <?php } else { ?>
               <li><span>Previous Week</span>
             <?php } ?>
@@ -60,7 +60,7 @@ if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
             <?php } ?>
 
             <?php if($week !== $lastWeek) { ?>
-              <li><a href="?w=<?php echo $week + 1; ?>">Next Week</a>
+              <li><a href="?w=<?php echo formatWeek($week + 1); ?>">Next Week</a>
             <?php } else { ?>
               <li><span>Next Week</span>
             <?php } ?>
