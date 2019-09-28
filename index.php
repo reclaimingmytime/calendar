@@ -5,7 +5,7 @@ if(!file_exists("config.php")) {
 require_once("config.php");
 
 function isBetween($x, $min, $max) {
-  return is_int($x) && ($min <= $x) && ($x <= $max);
+  return ctype_digit($x) && ($min <= $x) && ($x <= $max);
 }
 
 function escape($input) {
@@ -19,8 +19,7 @@ function formatWeek($raw) {
 }
 
 function getCurrentWeek() {
-  $date = new DateTime();  
-  return $date->format("W");
+  return (new DateTime())->format("W");
 }
 
 $week = getCurrentWeek();
@@ -28,7 +27,7 @@ $week = getCurrentWeek();
 $firstWeek = '01'; //int would convert 01 to 1
 $lastWeek = '53';
 
-if(isset($_GET['w']) && isBetween((int)$_GET['w'], $firstWeek, $lastWeek)) {
+if(isset($_GET['w']) && isBetween($_GET['w'], $firstWeek, $lastWeek)) {
   $customWeek = true;
   $currentWeek = $week;
 
